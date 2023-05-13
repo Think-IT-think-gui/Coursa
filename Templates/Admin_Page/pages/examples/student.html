@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | User Profile</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% get_static_prefix %}Temp9/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% get_static_prefix %}Temp9/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+   
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+ 
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapr">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Profile</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">User Profile</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+
+            <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+              <div class="card-body box-profile">
+                <div class="text-center">
+                  <img class="profile-user-img img-fluid img-circle" style="width:90px;height: 90px;"
+                  src="{% get_media_prefix %}Students/{{Data1.id}}.jpg?{{Rand}}"
+                       alt="User profile picture">
+                </div>
+
+                <h3 class="profile-username text-center">{{Data1.Full_Name}}</h3>
+
+                
+                
+
+               
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+            <!-- About Me Box -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">About Account</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <strong><i class="fas fa-book mr-1"></i>Email</strong>
+
+                <p class="text-muted">
+                  {{Data1.Email}}
+                </p>
+
+                <hr>
+
+                <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+
+                <p class="text-muted">{{Data1.Location}}</p>
+                <hr>
+
+                
+
+               
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-9">
+            <div class="card">
+              <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                  
+                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
+                </ul>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content">
+                 
+                
+                     <!-- /.tab-pane -->
+                  
+                  <!-- /.tab-pane -->
+
+                  <div class="tab-pane active tab-pane" id="settings">
+                    
+                      <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">Full Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" value="{{Data1.Full_Name}}" id="Full_Name" placeholder="Name">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" value="{{Data1.Email}}" id="Email"  placeholder="Email">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-2 col-form-label">Contact</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" value="{{Data1.Contact}}" id="Contact" placeholder="Contact">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-2 col-form-label">Location</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="Location" value="{{Data1.Location}}" placeholder="Location">
+                        </div>
+                      </div>
+                      
+                      
+                      <div style="padding-top: 20px;"></div>
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-2 col-form-label">User Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control border-success" id="User" value="{{Data1.User}}"  placeholder="User ID">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control border-danger" id="Password" value="{{Data1.Password}}"  placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-10">
+                          <button type="button" onclick="Update_info()" class="btn btn-danger">Submit</button>
+                        </div>
+                      </div>
+                   
+                  </div>
+                  <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+   
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="{% get_static_prefix %}Temp9/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="{% get_static_prefix %}Temp9/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="{% get_static_prefix %}Temp9/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{% get_static_prefix %}Temp9/dist/js/demo.js"></script>
+</body>
+</html>
+
+<script>
+  function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          // Does this cookie string begin with the name we want?
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+          }
+      }
+  }
+  return cookieValue;
+  }
+
+  const csrftoken = getCookie('csrftoken');
+  console.log(csrftoken)
+
+function Update(){
+  var plans = document.getElementById('plan').value
+  var days = document.getElementById('day').value
+
+data = JSON.stringify({
+  Plans: plans,
+  Days: days,
+  id:'{{Data1.id}}',
+ })
+  fetch("../../../User_Account/1", {
+  method: 'POST',
+  body: data,
+  headers: { 'X-CSRFToken': csrftoken,'Accept': 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      },
+ })
+.then(response => response.json())
+.then(data => {
+  console.log(data);
+  alert(data)
+
+ });}
+
+ function Update_info(){
+  var d1 = document.getElementById('Full_Name').value
+  var d2 = document.getElementById('Email').value
+  var d3 = document.getElementById('Contact').value
+  var d4 = document.getElementById('Location').value
+
+  var d9 = document.getElementById('User').value
+  var d10 = document.getElementById('Password').value
+
+
+data = JSON.stringify({
+  Full_Name: d1,
+  Contact: d3,
+  Email: d2,
+  Location: d4,
+  User: d9,
+  Password: d10,
+
+  id:'{{Data1.id}}',
+ })
+  fetch("{% url 'student_info' %}", {
+  method: 'POST',
+  body: data,
+  headers: { 'X-CSRFToken': csrftoken,'Accept': 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      },
+ })
+.then(response => response.json())
+.then(data => {
+  console.log(data);
+  alert(data)
+
+ });}
+
+
+</script>

@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Edulerns | Education HTML Template</title>
+<!-- Stylesheets -->
+<link href="{% get_static_prefix %}Temp_1/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="{% get_static_prefix %}Temp_1/css/style.css" rel="stylesheet">
+<link href="{% get_static_prefix %}Temp_1/css/responsive.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="{% get_static_prefix %}Temp_1/images/favicon.png" type="image/x-icon">
+<link rel="icon" href="{% get_static_prefix %}Temp_1/images/favicon.png" type="image/x-icon">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+	<!-- Preloader -->
+	<div class="preloader"></div>
+
+	<!-- Main Header-->
+	
+	{% include 'Extra\header_3.html' %}
+
+	<!-- Courses Section -->
+	<section class="">
+		<div class="container pb-100">
+			<div class="row">
+				
+				 
+				
+
+				{% for i in Courses %}
+					
+				<div class="course-block-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+
+						<div class="image-box">
+								<figure class="image"><a ><img src="{% get_media_prefix %}Courses/{{i.id}}.jpg" alt=""></a></figure>
+								<span class="price">${{i.Amount}}</span>
+								<div class="value">{{i.Level}}</div>
+							</div>
+							<div class="content-box">
+								<ul class="course-info">
+									
+									<li><i class="fa fa-users"></i> {{i.Sales}} Students</li>
+								</ul>
+								<h5 class="title"><a href="page-course-details.html">{{i.Name}}</a></h5>
+								<div class="other-info">
+									<div class="rating-box">
+										<span class="text">({{i.Rate}} /8 Rating)</span>
+										<div class="rating"><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></div>
+									</div>
+									<div class="duration"><i class="fa fa-clock"></i> {{i.date}}</div>
+								</div>
+
+							</div>
+							<form action="{% url 'courses_content' %}" method="post">
+								{% csrf_token %}
+								<input type="hidden" value="{{i.id}}" name="id">
+							<div  style="text-align: center;padding-bottom: 20px;">
+							<button type="submit" class="theme-btn btn-style-one shop-now"><span class="btn-title"><i class="fa fa-eye" style="padding-right: 6px;"></i>View</span></button>
+						     </div>
+							</form> 
+						</div>
+					</div>
+					{% endfor %}
+
+				
+
+			</div>
+		</div>
+	</section>
+	<!-- End Courses Section-->
+
+	<!-- Main Footer -->
+	<footer class="main-footer">
+		<div class="bg-image zoom-two" style="background-image: url(images/background/4.jpg)"></div>
+
+		<!--Widgets Section-->
+		<div class="widgets-section">
+			<div class="auto-container">
+				<div class="row">
+					<!--Footer Column-->
+					<div class="footer-column col-xl-3 col-lg-12 col-md-6 col-sm-12">
+						<div class="footer-widget about-widget">
+							<div class="logo"><a href="index.html"><img src="images/logo-2.png" alt=""></a></div>
+							<div class="text">Get 26,000+ best online courses from us</div>
+							<ul class="social-icon-two">
+								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fab fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+								<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!--Footer Column-->
+					<div class="footer-column col-xl-2 col-lg-4 col-md-6 col-sm-12">
+						<div class="footer-widget">
+							<h4 class="widget-title">Explore</h4>
+							<ul class="user-links">
+								<li><a href="#">Gallery</a></li>
+								<li><a href="#">News & Articles</a></li>
+								<li><a href="#">FAQ's</a></li>
+								<li><a href="#">Sign In/Registration</a></li>
+								<li><a href="#">Coming Soon</a></li>
+								<li><a href="#">Contacts</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!--Footer Column-->
+					<div class="footer-column col-xl-2 col-lg-4 col-md-6 col-sm-12">
+						<div class="footer-widget">
+							<h4 class="widget-title">Links</h4>
+							<ul class="user-links">
+								<li><a href="#">About</a></li>
+								<li><a href="#">Courses</a></li>
+								<li><a href="#">Instructor</a></li>
+								<li><a href="#">Events</a></li>
+								<li><a href="#">Instructor Profile</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!--Footer Column-->
+					<div class="footer-column col-xl-5 col-lg-4 col-md-6 col-sm-12">
+						<div class="footer-widget contact-widget">
+							<h4 class="widget-title">Contact</h4>
+							<div class="widget-content">
+								<ul class="contact-info">
+									<li><i class="fa fa-phone-square"></i> <a href="tel:+926668880000">+92 (0088) 6823</a></li>
+									<li><i class="fa fa-envelope"></i> <a href="mailto:needhelp@potisen.com">needhelp@company.com</a></li>
+									<li><i class="fa fa-map-marker-alt"></i> 80 Broklyn Golden Street. New York. USA</li>
+								</ul>
+								<div class="subscribe-form">
+
+									<form method="post" action="#">
+										<div class="form-group">
+											<input type="email" name="email" class="email" value="" placeholder="Email Address" required="">
+											<button type="button" class="theme-btn btn-style-one"><i class="fa fa-long-arrow-alt-right"></i></button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Footer Bottom-->
+		<div class="footer-bottom">
+			<div class="auto-container">
+				<div class="inner-container">
+					<div class="copyright-text">&copy; Copyright 2022 by  <a href="index.html">Company.com</a></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--End Main Footer -->
+
+</div><!-- End Page Wrapper -->
+
+
+<!-- Scroll To Top -->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+
+<script src="{% get_static_prefix %}Temp_1/js/jquery.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/popper.min.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/bootstrap.min.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/jquery.fancybox.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/jquery-ui.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/wow.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/appear.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/select2.min.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/swiper.min.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/owl.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<meta charset="utf-8">
+	<title>Chooser</title>
+
+	<meta name="description" content="--">
+
+	<meta name="keywords" content="Premium Institute, School, Course Booking HTML Template, jthemes">
+
+	<meta name="author" content="xyz">
+
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- css-include -->
+
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.css">
+	<link rel="stylesheet" href="assets/css/flaticon.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/meanmenu.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/video.min.css">
+	<link rel="stylesheet" href="assets/css/lightbox.css">
+	<link rel="stylesheet" href="assets/css/progess.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/responsive.css">
+
+</head>
+<body>
+	<style>
+
+
+	p,
+	a,
+	body,
+	button {font-family: 'Quattrocento', serif;}
+	h1,h2,h3,h4,h5,h6 {font-family: 'Oxygen', sans-serif;}
+
+	body {
+		font-size: 16px;
+	}
+	h1,h2,h3,h4,h5,h6 {
+		color: #151515;
+		line-height: 1.37;
+		text-transform: capitalize;
+	}
+	img {
+		height: auto;
+		max-width: 100%;
+	}
+	strong,span,small,i {
+		line-height: normal;
+		display: inline-block;
+	}
+	strong {font-weight: 700;}
+
+	.sec-ptb-100 {padding: 100px 0px;}
+	.bg-yellow {background-color: #ffc107;}
+	.overlay-white {background-color: rgba(255,255,255,0.8);}
+	.container {
+		margin: 0 auto;
+		max-width: 1200px;
+	}
+	::selection {
+		color: #151515;
+		background: #ffc107;
+	}
+
+	/* link button - start */
+	.custom-btn {
+		color: #151515;
+		font-weight: 700;
+		border-radius: 3px;
+		padding: 10px 15px;
+		background-color: #ffc107;
+		text-transform: capitalize;
+		border: 3px solid #ffc107;
+	}
+	.custom-btn span {
+		width: 25px;
+		height: 25px;
+		overflow: hidden;
+		color: #ffffff;
+		margin: -8px 0px;
+		margin-left: 10px;
+		line-height: 27px;
+		text-align: center;
+		position: relative;
+		border-radius: 3px;
+		background-color: #151515;
+	}
+	.custom-btn:hover {
+		color: #151515;
+		background-color: #ffffff;
+	}
+	.custom-btn:hover span {
+		color: #151515;
+		background-color: #ffc107;
+	}
+	/* link button - end */
+
+
+	/* back to top - start */
+	.backtotop {
+		width: 40px;
+		height: 60px;
+		right: 30px;
+		bottom: 70px;
+		z-index: 999;
+		display: none;
+		position: fixed;
+		overflow: hidden;
+		text-align: center;
+		border-radius: 3px;
+		background: #ffffff;
+		border: 3px solid #ffc107;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+		-webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+	}
+	.backtotop a.scroll {
+		width: 100%;
+		height: 100%;
+		display: block;
+		color: #ffc107;
+		font-size: 24px;
+		line-height: 60px;
+	}
+	/* back to top - end */
+
+
+	/* header-section - start */
+	.header-section {
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 80px;
+		z-index: 999;
+		position: fixed;
+		padding: 30px 0px;
+		background-color: #ffffff;
+	}
+	.header-section .logo-area {
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 200px;
+		height: 100px;
+		margin: 0 auto;
+		position: absolute;
+		line-height: 100px;
+		background-color: #151515;
+	}
+	.header-section .logo-area .brand-logo {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	/* header-section - end */
+
+	/* page-title-section - start */
+	.page-title-section {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-image: url(assets/images/banner-bg.jpg);
+	}
+	.page-title-section .overlay-white {padding: 200px 0px;}
+	.page-title-section .custom-btn {margin: 15px 5px;}
+	/* page-title-section - end */
+
+	/* pages-section - start */
+	.preview-page {
+		margin-bottom: 60px;
+		box-shadow: 0px 4px 17px 0px rgba(0, 0, 0, 0.1);
+		text-align: center;
+		padding-bottom: 20px;
+	}
+	.preview-page .preview-img {
+		width: 100%;
+		height: 550px;
+		padding: 10px;
+		display: block;
+		overflow: hidden;
+		border-radius: 3px;
+
+	}
+	.preview-page h2 {
+		font-size: 20px;
+		text-align: center;
+		margin-top: 20px;
+		text-transform: uppercase;
+	}
+
+
+
+
+
+	margin-bottom: 20px;
+}
+.preview-page h2 {
+	margin: 0;
+	padding: 0px;
+	font-size: 24px;
+	text-align: center;
+	background-color: #ffffff;
+}
+/* pages-section - end */
+
+/* features-section - start */
+.features-section {background-color: #f9f9f9;}
+.features-section h2.title {margin-bottom: 50px;}
+
+.features-section .feature {
+	width: 100%;
+	height: auto;
+	padding: 30px;
+	min-height: 205px;
+	text-align: center;
+	border-radius: 3px;
+	margin-bottom: 30px;
+	background: #ffffff;
+}
+.features-section .feature span {
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+	text-align: center;
+	margin: 0 auto 15px;
+}
+.features-section .feature h3 {
+	margin: 0px;
+	color: #151515;
+	font-size: 16px;
+}
+/* features-section - end */
+
+/* footer-section - start */
+.footer-section {
+	padding: 30px 0px;
+	text-align: center;
+	background-color: #151515;
+}
+.footer-section p {
+	margin: 0;
+	padding: 0;
+	color: #ffffff;
+}
+.footer-section a {color: #ffc107;}
+/* footer-section - end */
+
+@media screen and (max-width: 991px) {
+	.preview-page,
+	.features-section .feature {
+		max-width: 350px;
+		margin: 0 auto 30px;
+	}
+}
+
+</style>
+
+<div id="preloader"></div>
+
+<!-- header-section - start
+	================================================== -->
+	<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style">
+		<div class="blakish-overlay"></div>
+		<div class="container">
+			<div class="page-breadcrumb-content text-center">
+				<div class="page-breadcrumb-title">
+					<h2 class="breadcrumb-head black bold">Genius <span>Demo</span></h2>
+				</div>
+				<div class="page-breadcrumb-item ul-li">
+					<ul class="breadcrumb text-uppercase black">
+						<li class="breadcrumb-item"><a href="#">Demo</a></li>
+						<li class="breadcrumb-item active">Pages</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- header-section - end
+		================================================== -->
+
+
+	<!-- pages-section - start
+		================================================== -->
+		<section id="pages-section" class="pages-section sec-ptb-100 clearfix">
+			<div class="container">
+				<div class="row">
+
+					<!-- preview-page - start -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="preview-page">
+							<a href="index-1.html" class="preview-img z-depth-1" target="_blank">
+								<img src="preview/home-1.png" alt="preview_image_not_found">
+							</a>
+							<h2>Home page 1</h2>
+						</div>
+					</div>
+					<!-- preview-page - end -->
+
+					<!-- preview-page - start -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="preview-page">
+							<a href="index-2.html" class="preview-img z-depth-1" target="_blank">
+								<img src="preview/home-2.png" alt="preview_image_not_found">
+							</a>
+							<h2>Home Page 2</h2>
+						</div>
+					</div>
+					<!-- preview-page - end -->
+
+					<!-- preview-page - start -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="preview-page">
+							<a href="index-3.html" class="preview-img z-depth-1" target="_blank">
+								<img src="preview/home-3.png" alt="preview_image_not_found">
+							</a>
+							<h2>Home Page 3</h2>
+						</div>
+					</div>
+					<!-- preview-page - end -->
+
+					<!-- preview-page - start -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="preview-page">
+							<a href="index-4.html" class="preview-img z-depth-1" target="_blank">
+								<img src="preview/home-4.png" alt="preview_image_not_found">
+							</a>
+							<h2>Home Page 4 </h2>
+						</div>
+					</div>
+					<!-- preview-page - end -->
+
+					<!-- preview-page - start -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="preview-page">
+							<a href="about.html" class="preview-img z-depth-1" target="_blank">
+								<img src="preview/ab.png" alt="preview_image_not_found">
+							</a>
+							<h2>About Page</h2>
+						</div>
+					</div>
+					<!-- preview-page - end -->
+
+					<!-- preview-page - start -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="preview-page">
+							<a href="teacher.html" class="preview-img z-depth-1" target="_blank">
+								<img src="preview/tc.png" alt="preview_image_not_found">
+							</a>
+							<h2>Teachers Page</h2>
+						</div>
+					</div>
+					<!-- preview-page - end -->
+
+					<!-- preview-page - start -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="preview-page">
+							<a href="teacher-details.html" class="preview-img z-depth-1" target="_blank">
+								<img src="preview/td.png" alt="preview_image_not_found">
+							</a>
+							<h2>Teachers details</h2>
+						</div>
+					</div>
+					<!-- preview-page - end -->
+
+					<!-- preview-page - start -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="preview-page">
+							<a href="course.html" class="preview-img z-depth-1" target="_blank">
+								<img src="preview/course.png" alt="preview_image_not_found">
+							</a>
+							<h2>Course Page</h2>
+						</div>
+					</div>
+					<!-- preview-page - end -->
+
+					<!-- preview-page - start -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="preview-page">
+							<a href="course-details.html" class="preview-img z-depth-1" target="_blank">
+								<img src="preview/course-d.png" alt="preview_image_not_found">
+							</a>
+							<h2>Course Details</h2>
+						</div>
+					</div>
+					<!-- preview-page - end -->
+
+					<!-- preview-page - start -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="preview-page">
+							<a href="shop.html" class="preview-img z-depth-1" target="_blank">
+								<img src="preview/sh.png" alt="preview_image_not_found">
+							</a>
+							<h2>Shop Page</h2>
+						</div>
+					</div>
+					<!-- preview-page - end -->
+
+					<!-- preview-page - start -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="preview-page">
+							<a href="contact.html" class="preview-img z-depth-1" target="_blank">
+								<img src="preview/cont.png" alt="preview_image_not_found">
+							</a>
+							<h2>Contact Page</h2>
+						</div>
+					</div>
+					<!-- preview-page - end -->
+
+					<!-- preview-page - start -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="preview-page">
+							<a href="blog.html" class="preview-img z-depth-1" target="_blank">
+								<img src="preview/bg.png" alt="preview_image_not_found">
+							</a>
+							<h2>Blog page</h2>
+						</div>
+					</div>
+					<!-- preview-page - end -->
+
+					<!-- preview-page - start -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="preview-page">
+							<a href="blog-single.html" class="preview-img z-depth-1" target="_blank">
+								<img src="preview/bgs.png" alt="preview_image_not_found">
+							</a>
+							<h2>Blog Single</h2>
+						</div>
+					</div>
+					<!-- preview-page - end -->
+
+					<!-- preview-page - start -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="preview-page">
+							<a href="faq.html" class="preview-img z-depth-1" target="_blank">
+								<img src="preview/fq.png" alt="preview_image_not_found">
+							</a>
+							<h2>Faq Page</h2>
+						</div>
+					</div>
+					<!-- preview-page - end -->
+
+					<!-- preview-page - start -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="preview-page">
+							<a href="check-out.html" class="preview-img z-depth-1" target="_blank">
+								<img src="preview/ch.png" alt="preview_image_not_found">
+							</a>
+							<h2>Check Out</h2>
+						</div>
+					</div>
+					<!-- preview-page - end -->
+
+				</div>
+			</div>
+		</section>
+		<!-- pages-section - end
+			================================================== -->
+
+
+
+
+
+
+		<!-- features-section - start
+			================================================== -->
+			<section id="features-section" class="features-section sec-ptb-100 clearfix">
+				<div class="container">
+
+					<h2 class="title text-center">
+						Template Features
+					</h2>
+
+					<div class="row">
+
+						<div class="col-lg-3">
+							<div class="feature z-depth-1">
+								<span>
+									<img src="preview/features/html5_css3.png" alt="image_not_found">
+								</span>
+								<h3>html5 & CSS3 template.</h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3">
+							<div class="feature z-depth-1">
+								<span>
+									<img src="preview/features/bootstrap_logo.png" alt="image_not_found">
+								</span>
+								<h3>Default framework bootstrap.</h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3">
+							<div class="feature z-depth-1">
+								<span>
+									<img src="preview/features/lt.svg" alt="image_not_found">
+								</span>
+								<h3>Light Box.</h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3">
+							<div class="feature z-depth-1">
+								<span>
+									<img src="preview/features/jquery_icon.png" alt="image_not_found">
+								</span>
+								<h3>Used jquery version 2.1.4.</h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3">
+							<div class="feature z-depth-1">
+								<span>
+									<img src="preview/features/w3_logo.png" alt="image_not_found">
+								</span>
+								<h3>W3 code Validated.</h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3">
+							<div class="feature z-depth-1">
+								<span>
+									<img src="preview/features/Responsive.png" alt="image_not_found">
+								</span>
+								<h3>100% responsive to all device.</h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3">
+							<div class="feature z-depth-1">
+								<span>
+									<img src="preview/features/edit.png" alt="image_not_found">
+								</span>
+								<h3>Fully customizable and easy to use.</h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3">
+							<div class="feature z-depth-1">
+								<span>
+									<img src="preview/features/code_icon.png" alt="image_not_found">
+								</span>
+								<h3>100% hand code and clear code quality.</h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3">
+							<div class="feature z-depth-1">
+								<span>
+									<img src="preview/features/design.png" alt="image_not_found">
+								</span>
+								<h3>Modern Design Quality.</h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3">
+							<div class="feature z-depth-1">
+								<span>
+									<img src="preview/features/browser.png" alt="image_not_found">
+								</span>
+								<h3>cross Browser.</h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3">
+							<div class="feature z-depth-1">
+								<span>
+									<img src="preview/features/doc_icon.png" alt="image_not_found">
+								</span>
+								<h3>well documenation.</h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3">
+							<div class="feature z-depth-1">
+								<span>
+									<img src="preview/features/google_fonts.png" alt="image_not_found">
+								</span>
+								<h3>Free google font used.</h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3">
+							<div class="feature z-depth-1">
+								<span>
+									<img src="preview/features/owl_logo.png" alt="image_not_found">
+								</span>
+								<h3>owl carousel 2 used.</h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3">
+							<div class="feature z-depth-1">
+								<span>
+									<img src="preview/features/font_awesome.png" alt="image_not_found">
+								</span>
+								<h3>Default icons used font awesome.</h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3">
+							<div class="feature z-depth-1">
+								<span>
+									<img src="preview/features/ionicon.png" alt="image_not_found">
+								</span>
+								<h3>Fontawesome & Flaticons.</h3>
+							</div>
+						</div>
+						
+						<div class="col-lg-3">
+							<div class="feature z-depth-1">
+								<span>
+									<img src="preview/features/scss.png" alt="image_not_found">
+								</span>
+								<h3>SASS Used.</h3>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+		<!-- features-section - end
+			================================================== -->
+
+
+
+
+
+		<!-- footer-section - start
+			================================================== -->
+			<footer id="footer-section" class="footer-section clearfix">
+				<div class="container">
+					<p class="copyright">
+						© All Right Reserved. Designed by <a href="https://jthemes.com" target="_blank"><u>Jthemes Studio</u></a>
+					</p>
+				</div>
+			</footer>
+		<!-- footer-section - end
+			================================================== -->
+
+
+			<!--  Js Library -->
+			<script src="assets/js/jquery-2.1.4.min.js"></script>
+			<script src="assets/js/bootstrap.min.js"></script>
+			<script src="assets/js/popper.min.js"></script>
+			<script src="assets/js/owl.carousel.min.js"></script>
+			<script src="assets/js/jarallax.js"></script>
+			<script src="assets/js/jquery.magnific-popup.min.js"></script>
+			<script src="assets/js/lightbox.js"></script>
+			<script src="assets/js/jquery.meanmenu.js"></script>
+			<script src="assets/js/scrollreveal.min.js"></script>
+			<script src="assets/js/jquery.counterup.min.js"></script>
+			<script src="assets/js/waypoints.min.js"></script>
+			<script src="assets/js/jquery-ui.js"></script>
+			<script src="assets/js/gmap3.min.js"></script>
+			<script src="assets/js/switch.js"></script>
+			<script src="http://maps.google.com/maps/api/js?key=AIzaSyC61_QVqt9LAhwFdlQmsNwi5aUJy9B2SyA"></script>
+
+			<script src="assets/js/script.js"></script>
+		</body>
+		</html>

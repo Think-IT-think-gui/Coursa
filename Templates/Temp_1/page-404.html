@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>error-page</title>
+<!-- Stylesheets -->
+<link href="{% get_static_prefix %}Temp_1/css/bootstrap.min.css" rel="stylesheet">
+<link href="{% get_static_prefix %}Temp_1/plugins/revolution/css/settings.css" rel="stylesheet" type="text/css"><!-- REVOLUTION SETTINGS STYLES -->
+<link href="{% get_static_prefix %}Temp_1/plugins/revolution/css/layers.css" rel="stylesheet" type="text/css"><!-- REVOLUTION LAYERS STYLES -->
+<link href="{% get_static_prefix %}Temp_1/plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css"><!-- REVOLUTION NAVIGATION STYLES -->
+
+<link href="{% get_static_prefix %}Temp_1/css/style.css" rel="stylesheet">
+<link href="{% get_static_prefix %}Temp_1/css/responsive.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="{% get_static_prefix %}Temp_1/images/favicon.png" type="image/x-icon">
+<link rel="icon" href="{% get_static_prefix %}Temp_1/images/favicon.png" type="image/x-icon">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+	<!-- Preloader -->
+	<div class="preloader"></div>
+
+	<!-- 404 Section -->
+	<section class="">
+		<div class="auto-container pt-120 pb-70">
+			<div class="row">
+                <div class="col-xl-12">
+                    <div class="error-page__inner">
+                        <div class="error-page__title-box">
+                        	<img src="{% get_static_prefix %}Temp_1/images/resource/404.jpg" alt="">
+                            <h3 class="error-page__sub-title">Credentials not found!</h3>
+                        </div>
+                        <p class="error-page__text">Sorry we can't find your Credentials! The account you are looking <br> for
+                         never existed.</p>
+                       
+                        <a href="{% url 'home' %}" class="theme-btn btn-style-one shop-now"><span class="btn-title">Back to Home</span></a>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</section>
+	<!--End 404 Section -->
+
+</div><!-- End Page Wrapper -->
+
+
+<!-- Scroll To Top -->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+<script src="{% get_static_prefix %}Temp_1/js/jquery.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/popper.min.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/bootstrap.min.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/jquery.fancybox.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/jquery-ui.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/wow.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/appear.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/select2.min.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/swiper.min.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/owl.js"></script>
+<script src="{% get_static_prefix %}Temp_1/js/script.js"></script>
+</html>

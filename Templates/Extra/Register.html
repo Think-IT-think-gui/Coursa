@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static%}
+
+<!-- molla/login.html  22 Nov 2019 10:04:03 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Molla - Bootstrap eCommerce Template</title>
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="Molla - Bootstrap eCommerce Template">
+    <meta name="author" content="p-themes">
+    <!-- Favicon -->
+    
+    <link rel="mask-icon" href="{% static 'Extra/assets/images/icons/safari-pinned-tab.svg'%}" color="#666666">
+    <link rel="shortcut icon" href="{% static 'Extra/assets/images/icons/favicon.ico'%}">
+    <meta name="apple-mobile-web-app-title" content="Molla">
+    <meta name="application-name" content="Molla">
+    <meta name="msapplication-TileColor" content="#cc9966">
+    <meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
+    <meta name="theme-color" content="#000000">
+	<link href="{% get_static_prefix %}Temp_1/css/bootstrap.min.css" rel="stylesheet">
+
+      <link href="{% get_static_prefix %}Temp_1/css/style.css" rel="stylesheet">
+
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="{% static 'Extra/assets/css/bootstrap.min.css'%}">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="{% static 'Extra/assets/css/style.css'%}">
+</head>
+
+<body >
+	<img style="position: fixed;width: 100%;height: 100%;z-index: -444;" src="{% get_static_prefix %}Temp_1/images/background/dark5.jpg" alt="" title="Tronis">
+    <div style="padding-top: 60px;"></div>
+           <main>
+            <div >
+
+            	<div class="container" >
+            		<div class="form-box" style="border-radius: 30px">
+            			<div class="form-tab">
+	            			<ul class="nav nav-pills nav-fill" role="tablist">
+							    <li class="nav-item">
+							        <a class="nav-link" id="signin-tab-2" data-toggle="tab" href="#signin-2" role="tab" aria-controls="signin-2" aria-selected="false"><i class="icon flaticon-student-2" style="color: rgb(99, 69, 233);font-size: 30px;"><span style="padding-left: 5px;" >Student</span></i></a>
+							    </li>
+							    <li class="nav-item">
+							        <a class="nav-link active" id="register-tab-2" data-toggle="tab" href="#register-2" role="tab" aria-controls="register-2" aria-selected="true"><i class="icon flaticon-online-learning" style="color: rgb(233, 69, 151);font-size: 30px;"><span style="padding-left: 5px;">Teacher</span></i></a>
+							    </li>
+							</ul>
+							<div class="tab-content">
+							    <div class="tab-pane fade" id="signin-2" role="tabpanel" aria-labelledby="signin-tab-2">
+									<h4 style="text-align: center;padding-top: 10px;">Register as a Student</h4>
+							    	<form action="{% url 'register' %}" method="post">
+                                        {% csrf_token %}
+										<input type="hidden" name="Type" value="Student" >
+							    		<div class="form-group">
+							    			<label for="register-email-2">Full Name*</label>
+							    			<input type="text" style="border-radius: 17px;"  class="form-control" id="register-email-2" name="Full_Name" required>
+							    		</div><!-- End .form-group -->
+
+							    		<div class="form-group">
+							    			<label for="register-password-2">Username *</label>
+							    			<input type="text" style="border-radius: 17px;" class="form-control" id="register-password-2" name="User" required>
+							    		</div><!-- End .form-group -->
+                                        
+                                        <div class="form-group">
+							    			<label for="register-password-2">Password *</label>
+							    			<input type="password" style="border-radius: 17px;" class="form-control" id="register-password-2" name="Password" required>
+							    		</div>
+
+                                        <div class="form-group">
+							    			<label for="register-password-2">Email *</label>
+							    			<input type="email" style="border-radius: 17px;" class="form-control" id="register-password-2" name="Email" required>
+							    		</div>
+                                        <div class="form-group">
+							    			<label for="register-password-2">Location *</label>
+							    			<input type="text" style="border-radius: 17px;" class="form-control" id="register-password-2" name="Location" required>
+							    		</div>
+                                        <div class="form-group">
+							    			<label for="register-password-2">Contact *</label>
+							    			<input type="text" style="border-radius: 17px;" class="form-control" id="register-password-2" name="Contact" required>
+							    		</div>
+							    		<div class="form-footer">
+							    			<button style="border-radius: 17px;"  type="submit" class="btn btn-outline-primary-2">
+			                					<span>SIGN UP</span>
+			            						<i class="icon-long-arrow-right"></i>
+			                				</button>
+
+			                				<div class="custom-control custom-checkbox">
+												<input type="checkbox"  class="custom-control-input" id="register-policy-2" >
+												<label class="custom-control-label" for="register-policy-2">I agree to the <a href="#">privacy policy</a> *</label>
+											</div><!-- End .custom-checkbox -->
+							    		</div><!-- End .form-footer -->
+							    	</form>
+							    	
+							    </div><!-- .End .tab-pane -->
+							    <div class="tab-pane fade show active" id="register-2" role="tabpanel" aria-labelledby="register-tab-2">
+									<h4 style="text-align: center;padding-top: 10px;">Register as a Teacher</h4>
+							    	<form action="{% url 'register' %}" method="post">
+										<input type="hidden" name="Type" value="Teacher" >
+
+                                        {% csrf_token %}
+							    		<div class="form-group">
+							    			<label for="register-email-2">Full Name*</label>
+							    			<input type="text" style="border-radius: 17px;"  class="form-control" id="register-email-2" name="Full_Name" required>
+							    		</div><!-- End .form-group -->
+
+							    		<div class="form-group">
+							    			<label for="register-password-2">Username *</label>
+							    			<input type="text" style="border-radius: 17px;" class="form-control" id="register-password-2" name="User" required>
+							    		</div><!-- End .form-group -->
+                                        
+                                        <div class="form-group">
+							    			<label for="register-password-2">Password *</label>
+							    			<input type="password" style="border-radius: 17px;" class="form-control" id="register-password-2" name="Password" required>
+							    		</div>
+
+                                        <div class="form-group">
+							    			<label for="register-password-2">Email *</label>
+							    			<input type="email" style="border-radius: 17px;" class="form-control" id="register-password-2" name="Email" required>
+							    		</div>
+                                        <div class="form-group">
+							    			<label for="register-password-2">Location *</label>
+							    			<input type="text" style="border-radius: 17px;" class="form-control" id="register-password-2" name="Location" required>
+							    		</div>
+                                        <div class="form-group">
+							    			<label for="register-password-2">Contact *</label>
+							    			<input type="text" style="border-radius: 17px;" class="form-control" id="register-password-2" name="Contact" required>
+							    		</div>
+							    		<div class="form-footer">
+							    			<button style="border-radius: 17px;"  type="submit" class="btn btn-outline-primary-2">
+			                					<span>SIGN UP</span>
+			            						<i class="icon-long-arrow-right"></i>
+			                				</button>
+
+			                				<div class="custom-control custom-checkbox">
+												<input type="checkbox"  class="custom-control-input" id="register-policy-2" >
+												<label class="custom-control-label" for="register-policy-2">I agree to the <a href="#">privacy policy</a> *</label>
+											</div><!-- End .custom-checkbox -->
+							    		</div><!-- End .form-footer -->
+							    	</form>
+							    	
+							    </div><!-- .End .tab-pane -->
+								<div style="text-align: center;">
+								
+									<a href="{% url 'login'%}"><button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Login Insted</span></button></a>
+							</div>
+							</div><!-- End .tab-content -->
+						</div><!-- End .form-tab -->
+            		</div><!-- End .form-box -->
+            	</div><!-- End .container -->
+            </div><!-- End .login-page section-bg -->
+        </main><!-- End .main -->
+
+        
+    <!-- Plugins JS File -->
+    <script src="{% static 'Extra/assets/js/jquery.min.js'%}"></script>
+    <script src="{% static 'Extra/assets/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'Extra/assets/js/jquery.hoverIntent.min.js'%}"></script>
+    <script src="{% static 'Extra/assets/js/jquery.waypoints.min.js'%}"></script>
+    <script src="{% static 'Extra/assets/js/superfish.min.js'%}"></script>
+    <script src="{% static 'Extra/assets/js/owl.carousel.min.js'%}"></script>
+    <!-- Main JS File -->
+    <script src="{% static 'Extra/assets/js/main.js'%}"></script>
+</body>
+
+
+<!-- molla/login.html  22 Nov 2019 10:04:03 GMT -->
+</html>

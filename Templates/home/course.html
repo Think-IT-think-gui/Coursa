@@ -1,0 +1,424 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Course Page</title>
+
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="{% get_static_prefix %}home/assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="{% get_static_prefix %}home/assets/css/fontawesome-all.css">
+	<link rel="stylesheet" href="{% get_static_prefix %}home/assets/css/flaticon.css">
+	<link rel="stylesheet" type="text/css" href="{% get_static_prefix %}home/assets/css/meanmenu.css">
+	<link rel="stylesheet" href="{% get_static_prefix %}home/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{% get_static_prefix %}home/assets/css/video.min.css">
+	<link rel="stylesheet" href="{% get_static_prefix %}home/assets/css/lightbox.css">
+	<link rel="stylesheet" href="{% get_static_prefix %}home/assets/css/progess.css">
+	<link rel="stylesheet" href="{% get_static_prefix %}home/assets/css/style.css">
+	<link rel="stylesheet" href="{% get_static_prefix %}home/assets/css/responsive.css">
+
+
+	<link rel="stylesheet"  href="{% get_static_prefix %}home/assets/css/colors/switch.css">
+	<link href="{% get_static_prefix %}home/assets/css/colors/color-2.css" rel="alternate stylesheet" type="text/css" title="color-2">
+	<link href="{% get_static_prefix %}home/assets/css/colors/color-3.css" rel="alternate stylesheet" type="text/css" title="color-3">
+	<link href="{% get_static_prefix %}home/assets/css/colors/color-4.css" rel="alternate stylesheet" type="text/css" title="color-4">
+	<link href="{% get_static_prefix %}home/assets/css/colors/color-5.css" rel="alternate stylesheet" type="text/css" title="color-5">
+	<link href="{% get_static_prefix %}home/assets/css/colors/color-6.css" rel="alternate stylesheet" type="text/css" title="color-6">
+	<link href="{% get_static_prefix %}home/assets/css/colors/color-7.css" rel="alternate stylesheet" type="text/css" title="color-7">
+	<link href="{% get_static_prefix %}home/assets/css/colors/color-8.css" rel="alternate stylesheet" type="text/css" title="color-8">
+	<link href="{% get_static_prefix %}home/assets/css/colors/color-9.css" rel="alternate stylesheet" type="text/css" title="color-9">
+
+</head>
+
+<body>
+
+	<div id="preloader"></div>
+
+			<div id="switch-color" class="color-switcher">
+		<div class="open"><i class="fas fa-cog fa-spin"></i></div>
+		<h4>COLOR OPTION</h4>
+		<ul>
+			<li><a class="color-2" onclick="setActiveStyleSheet('color-2'); return true;" href="#!"><i class="fas fa-circle"></i></a> </li>
+			<li><a class="color-3" onclick="setActiveStyleSheet('color-3'); return true;" href="#!"><i class="fas fa-circle"></i></a> </li>
+			<li><a class="color-4" onclick="setActiveStyleSheet('color-4'); return true;" href="#!"><i class="fas fa-circle"></i></a> </li>
+			<li><a class="color-5" onclick="setActiveStyleSheet('color-5'); return true;" href="#!"><i class="fas fa-circle"></i></a> </li>
+			<li><a class="color-6" onclick="setActiveStyleSheet('color-6'); return true;" href="#!"><i class="fas fa-circle"></i></a> </li>
+			<li><a class="color-7" onclick="setActiveStyleSheet('color-7'); return true;" href="#!"><i class="fas fa-circle"></i></a> </li>
+			<li><a class="color-8" onclick="setActiveStyleSheet('color-8'); return true;" href="#!"><i class="fas fa-circle"></i></a> </li>
+			<li><a class="color-9" onclick="setActiveStyleSheet('color-9'); return true;" href="#!"><i class="fas fa-circle"></i></a> </li>
+		</ul>
+		<button class="switcher-light">WIDE </button>
+		<button class="switcher-dark">BOX </button>
+		
+	</div>
+
+
+
+	<!-- Start of Header section
+		============================================= -->
+		{% include 'Extra\home.html' %}
+		
+ 	<!-- Start of Header section
+ 		============================================= --> 
+
+
+	<!-- Start of breadcrumb section
+		============================================= -->
+		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style">
+			<div class="blakish-overlay"></div>
+			<div class="container">
+				<div class="page-breadcrumb-content text-center">
+					<div class="page-breadcrumb-title">
+						<h2 class="breadcrumb-head black bold">Genius <span>Courses</span></h2>
+					</div>
+					<div class="page-breadcrumb-item ul-li">
+						<ul class="breadcrumb text-uppercase black">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item active">Courses</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- End of breadcrumb section
+		============================================= -->
+
+
+	<!-- Start of course section
+		============================================= -->
+		<section id="course-page" class="course-page-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9">
+						
+
+						<div class="genius-post-item">
+							<div class="tab-container">
+								<div id="tab1" class="tab-content-1 pt35">
+									<div class="best-course-area best-course-v2">
+										<div class="row">
+											
+											
+											{% for i in Courses %}
+											
+											<div class="col-md-4">
+												<div class="best-course-pic-text relative-position "  >
+													<div class="best-course-pic relative-position">
+														<img src="{% get_media_prefix %}Courses/{{i.id}}.jpg" alt="">
+														<div class="trend-badge-2 text-center text-uppercase">
+															<i class="fas fa-bolt"></i>
+															<span>Trending</span>
+														</div>
+														<div class="course-price text-center gradient-bg">
+															<span>${{i.Amount}}</span>
+														</div>
+														<div class="course-rate ul-li">
+															<ul>
+																<li><h4 style="color: bisque;">{{i.Rate}}</h4></li>
+																<li><i class="fas fa-star"></i></li>
+															</ul>
+															
+														</div>
+														<div class="course-details-btn">
+															<form action="{% url 'courses_content' %}" method="post">
+																{% csrf_token %}
+																<input type="hidden" value="{{i.id}}" name="id">
+															<div  style="text-align: center;padding-bottom: 20px;">
+															<button type="submit" style="border: 0px;background-color: transparent;"><a style="color: beige;">COURSE DETAIL <i class="fas fa-arrow-right"></i></a></button>
+															 </div>
+															</form> 
+														</div>
+														<div class="blakish-overlay"></div>
+													</div>
+													<div class="best-course-text">
+														<div class="course-title mb20 headline relative-position">
+															<h3><a href="#">{{i.Name}}</a></h3>
+														</div>
+														<div class="course-meta">
+															<span class="course-category" style="font-size: 11px;"><a href="#">{{i.Type}}</a></span>
+															<span class="course-author" style="font-size: 11px;"><a href="#">{{i.date}}</a></span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- /course -->
+                                            {% endfor %}
+											
+
+											
+
+											
+											
+
+
+										</div>
+									</div>
+								</div><!-- /tab-1 -->
+
+								
+							</div>
+						</div>
+
+						
+					</div>
+
+					<div class="col-md-3">
+						<div class="side-bar">
+
+							<div class="side-bar-widget  first-widget">
+								<h2 class="widget-title text-capitalize"><span>Find </span>Your Course.</h2>
+								<div class="listing-filter-form pb30">
+									<form action="{% url 'courses_find'%}" method="post">
+										{% csrf_token %}
+										<div class="filter-select mb20">
+											<label>COURSE TYPE</label>
+											<select name="Type"> 
+											     	<option>Clothen And Fashion</option>
+													<option>Food And Catering</option>
+													<option>Finance And Savings</option>
+													<option>Repair And Fixes</option>
+													<option>IT and Technology</option>
+													<option>Graphic Design</option>
+													<option>Photography</option>
+													<option>Enginering</option>
+													<option>Science</option>
+													<option>Marketing</option>
+											</select>
+										</div>
+
+										<div class="filter-select mb20">
+											<label>STUDY LEVEL</label>
+											<select name="Level">
+												<option>Basic</option>
+                                                <option>Standard</option>
+                                                <option>Advanced</option>
+											</select>
+										</div>
+										
+										<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+											<button type="submit" style="background-color: transparent;border: 0px;"><a style="color: beige;">FIND COURSES <i class="fas fa-caret-right"></i></a></button>
+										</div>
+									</form>
+
+								</div>
+							</div>
+
+							
+
+							
+
+							<div class="side-bar-widget">
+								<h2 class="widget-title text-capitalize"><span>Featured</span> Course.</h2>
+								<div class="featured-course">
+									<div class="best-course-pic-text relative-position">
+										<div class="best-course-pic relative-position">
+											<img src="{% get_static_prefix %}home/assets/img/blog/fb-1.jpg" alt="">
+											<div class="trend-badge-2 text-center text-uppercase">
+												<i class="fas fa-bolt"></i>
+												<span>Trending</span>
+											</div>
+										</div>
+										<div class="best-course-text">
+											<div class="course-title mb20 headline relative-position">
+												<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
+											</div>
+											<div class="course-meta">
+												<span class="course-category"><a href="#">Web Design</a></span>
+												<span class="course-author"><a href="#">250 Students</a></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- End of course section
+		============================================= -->
+
+
+		
+
+
+	<!-- Start of footer section
+		============================================= -->
+		<footer>
+			<section id="footer-area" class="footer-area-section">
+				<div class="container">
+					<div class="footer-content pb10">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="footer-widget">
+									<div class="footer-logo mb35">
+										<img src="{% get_static_prefix %}home/assets/img/logo/f-logo.png" alt="">
+									</div>
+									<div class="footer-about-text">
+										<p>We take our mission of increasing global access to quality education seriously. We connect learners to the best universities and institutions from around the world.</p>
+										<p>Lorem ipsum dolor sit amet we take our mission of increasing global access to quality education seriously. </p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="footer-widget">
+									<div class="footer-menu ul-li-block">
+										<h2 class="widget-title">Useful Links</h2>
+										<ul>
+											<li><a href="#"><i class="fas fa-caret-right"></i>About Us</a></li>
+											<li><a href="#"><i class="fas fa-caret-right"></i>Graphic Design</a></li>
+											<li><a href="#"><i class="fas fa-caret-right"></i>Mobile Apps</a></li>
+											<li><a href="#"><i class="fas fa-caret-right"></i>Responsive Website</a></li>
+											<li><a href="#"><i class="fas fa-caret-right"></i>Graphic Design</a></li>
+											<li><a href="#"><i class="fas fa-caret-right"></i>Mobile Apps</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="footer-menu ul-li-block">
+									<h2 class="widget-title">Account Info</h2>
+									<ul>
+										<li><a href="#"><i class="fas fa-caret-right"></i>Setting Account</a></li>
+										<li><a href="#"><i class="fas fa-caret-right"></i>Login & Register</a></li>
+										<li><a href="#"><i class="fas fa-caret-right"></i>Contact Us</a></li>
+										<li><a href="#"><i class="fas fa-caret-right"></i>Graphic Design</a></li>
+										<li><a href="#"><i class="fas fa-caret-right"></i>Mobile Apps</a></li>
+										<li><a href="#"><i class="fas fa-caret-right"></i>Responsive Website</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="footer-widget">
+									<h2 class="widget-title">Photo Gallery</h2>
+									<div class="photo-list ul-li">
+										<ul>
+											<li>
+												<img src="{% get_static_prefix %}home/assets/img/gallery/g-1.jpg" alt="">
+												<div class="blakish-overlay"></div>
+												<div class="pop-up-icon">
+													<a href="{% get_static_prefix %}home/assets/img/gallery/g-1.jpg" data-lightbox="roadtrip">
+														<i class="fas fa-search"></i>
+													</a>
+												</div>
+											</li>
+											<li>
+												<img src="{% get_static_prefix %}home/assets/img/gallery/g-2.jpg" alt="">
+												<div class="blakish-overlay"></div>
+												<div class="pop-up-icon">
+													<a href="{% get_static_prefix %}home/assets/img/gallery/g-2.jpg" data-lightbox="roadtrip">
+														<i class="fas fa-search"></i>
+													</a>
+												</div>
+											</li>
+											<li>
+												<img src="{% get_static_prefix %}home/assets/img/gallery/g-3.jpg" alt="">
+												<div class="blakish-overlay"></div>
+												<div class="pop-up-icon">
+													<a href="{% get_static_prefix %}home/assets/img/gallery/g-3.jpg" data-lightbox="roadtrip">	<i class="fas fa-search"></i></a>
+												</div>
+											</li>
+											<li>
+												<img src="{% get_static_prefix %}home/assets/img/gallery/g-4.jpg" alt="">
+												<div class="blakish-overlay"></div>
+												<div class="pop-up-icon">
+													<a href="{% get_static_prefix %}home/assets/img/gallery/g-4.jpg" data-lightbox="roadtrip">	<i class="fas fa-search"></i></a>
+												</div>
+											</li>
+											<li>
+												<img src="{% get_static_prefix %}home/assets/img/gallery/g-5.jpg" alt="">
+												<div class="blakish-overlay"></div>
+												<div class="pop-up-icon">
+													<a href="{% get_static_prefix %}home/assets/img/gallery/g-5.jpg" data-lightbox="roadtrip">	<i class="fas fa-search"></i></a>
+												</div>
+											</li>
+											<li>
+												<img src="{% get_static_prefix %}home/assets/img/gallery/g-6.jpg" alt="">
+												<div class="blakish-overlay"></div>
+												<div class="pop-up-icon">
+													<a href="{% get_static_prefix %}home/assets/img/gallery/g-6.jpg" data-lightbox="roadtrip">	<i class="fas fa-search"></i></a>
+												</div>
+
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> 
+					<!-- /footer-widget-content -->
+					<div class="footer-social-subscribe mb65">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="footer-social ul-li">
+									<h2 class="widget-title">Social Network</h2>
+									<ul>
+										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+										<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-9">
+								<div class="subscribe-form">
+									<h2 class="widget-title">Subscribe Newsletter</h2>
+
+									<div class="subs-form relative-position">
+										<form action="#" method="post">
+											<input class="course" name="course" type="email" placeholder="Email Address.">
+											<div class="nws-button text-center  gradient-bg text-uppercase">
+												<button type="submit" value="Submit">Subscribe now</button> 
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="copy-right-menu">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="copy-right-text">
+									<p>© 2018 - Designed & Developed by <a href="https://jthemes.com" title="Best Premium WordPress, HTML Template Store"> Jthemes Studio</a>. All rights reserved</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="copy-right-menu-item float-right ul-li">
+									<ul>
+										<li><a href="#">License</a></li>
+										<li><a href="#">Privacy & Policy</a></li>
+										<li><a href="#">Term Of Service</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</footer>
+	<!-- End of footer section
+		============================================= -->
+
+
+
+		<!-- For Js Library -->
+		<script src="{% get_static_prefix %}home/assets/js/jquery-2.1.4.min.js"></script>
+		<script src="{% get_static_prefix %}home/assets/js/bootstrap.min.js"></script>
+		<script src="{% get_static_prefix %}home/assets/js/popper.min.js"></script>
+		<script src="{% get_static_prefix %}home/assets/js/owl.carousel.min.js"></script>
+		<script src="{% get_static_prefix %}home/assets/js/jarallax.js"></script>
+		<script src="{% get_static_prefix %}home/assets/js/jquery.magnific-popup.min.js"></script>
+		<script src="{% get_static_prefix %}home/assets/js/lightbox.js"></script>
+		<script src="{% get_static_prefix %}home/assets/js/jquery.meanmenu.js"></script>
+		<script src="{% get_static_prefix %}home/assets/js/scrollreveal.min.js"></script>
+		<script src="{% get_static_prefix %}home/assets/js/jquery.counterup.min.js"></script>
+		<script src="{% get_static_prefix %}home/assets/js/waypoints.min.js"></script>
+		<script src="{% get_static_prefix %}home/assets/js/jquery-ui.js"></script>
+		<script src="{% get_static_prefix %}home/assets/js/gmap3.min.js"></script>
+		<script src="{% get_static_prefix %}home/assets/js/switch.js"></script>
+		<script src="http://maps.google.com/maps/api/js?key=AIzaSyC61_QVqt9LAhwFdlQmsNwi5aUJy9B2SyA"></script>
+
+    	<script src="{% get_static_prefix %}home/assets/js/script.js"></script>
+	</body>
+	</html>

@@ -1,0 +1,155 @@
+{% load static %}
+<header>
+    <div id="main-menu"  class="main-menu-container">
+        <div  class="main-menu">
+            <div class="container">
+                <div class="navbar-default">
+                    <div class="navbar-header float-left">
+                        <a class="navbar-brand text-uppercase" href="#"><img src="{% get_static_prefix %}home/assets/img/logo/logo.png" alt="logo"></a>
+                    </div><!-- /.navbar-header -->
+
+                   
+                    <div class="cart-search float-right ul-li">
+                        <ul>
+                            
+                                {% if Data.Type == "None" %}
+                    
+                    {% elif Data.Type == "Student" %}
+                <li>
+                    <a href="{% url 'teacher_dashboard'%}"><img src="{% get_media_prefix %}Students/{{Data.id}}.jpg" style="width: 50px;height: 30px;border-radius: 100%;" alt=""></a>
+                </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'teacher_dashboard'%}"> <img src="{% get_media_prefix %}Teachers/{{Data.id}}.jpg" style="width: 50px;height: 30px;border-radius: 100%;" alt=""></a>
+                </li>
+                    {% endif %}
+                            
+                            <li>
+                                <button type="button" class="toggle-overlay search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <div class="search-body">
+                                    <div class="search-form">
+                                        <form action="#">
+                                            <input class="search-input" type="search" placeholder="Search Here">
+                                            <div class="outer-close toggle-overlay">
+                                                <button type="button" class="search-close">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="log-in float-right">
+                    {% if Data.Type == "None" %}
+                    <a  data-toggle="modal" data-target="#myModal" href="#">log in</a>
+                    {% else %}
+                    
+                    <a   href="{% url 'logout'%}">log out</a>
+                   
+                    {% endif %}
+                        <!-- The Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header backgroud-style">
+                                        <div class="gradient-bg"></div>
+                                        <div class="popup-logo">
+                                            <img src="{% get_static_prefix %}home/assets/img/logo/p-logo.jpg" alt="">
+                                        </div>
+                                        <div class="popup-text text-center">
+                                            <h2> <span>Login</span> Your Account.</h2>
+                                            <p>Login to our website, or <span>REGISTER</span></p>
+                                        </div>
+                                    </div>
+                                    <form class="contact_form" action="{% url 'login'%}" method="POST">
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <div class="facebook-login">
+                                            <a href="#">
+                                                <div class="log-in-icon">
+                                                    <input type="radio" checked name="Type" value="Teacher" >
+                                                </div>
+                                                <div class="log-in-text text-center">
+                                                    Login as Teacher
+                                                </div>
+                                                
+                                            </a>
+                                            
+                                        </div>
+                                        <div class="facebook-login">
+                                            <a href="#">
+                                                <div class="log-in-icon">
+                                                    <input type="radio" name="Type" value="Student" >
+                                                </div>
+                                                <div class="log-in-text text-center">
+                                                    Login as Student
+                                                </div>
+                                                
+                                            </a>
+                                            
+                                        </div>
+                                        <div class="alt-text text-center"><a href="#">OR SIGN IN</a> </div>
+                                     
+                                          <div class="contact_form">
+                                            {% csrf_token %}
+                                            <div class="contact-info">
+                                                <input class="name" required name="User" type="text" placeholder="Your@email.com*">
+                                            </div>
+                                            <div class="contact-info">
+                                                <input class="pass" required name="Password" type="password" placeholder="Your password*">
+                                            </div>
+                                            <div class="nws-button text-center white text-capitalize">
+                                                <button type="submit" value="Submit">LOg in Now</button> 
+                                            </div> 
+                                        </div>
+                                        </form>
+                                        <div class="log-in-footer text-center">
+                                            <p>* Denotes mandatory field.</p>
+                                            <p>** At least one telephone number is required.</p>
+                                        </div>
+                                        <div class="nws-button text-center white text-capitalize">
+                                           <a href="{% url 'register'%}"> <button type="button" >Register</button> </a>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <nav class="navbar-menu float-right">
+                        <div class="nav-menu ul-li">
+                            <ul>
+                                <li ><a href="{% url 'home' %}">Home</a></li>
+                                <li><a href="{% url 'courses_page' %}">Courses</a></li>
+
+                                <li><a href="#about">About Us</a></li>
+                                <li><a href="#contact-area">Contact Us</a></li>
+                                
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <div class="mobile-menu">
+                        <div class="logo"><a href="index-1.html"><img src="assets/img/logo/logo.png" alt="Logo"></a></div>
+                        <nav>
+                            <ul>
+                                <li ><a href="{% url 'home' %}">Home</a></li>
+                                <li><a href="{% url 'courses_page' %}">Courses</a></li>
+
+                                <li><a href="#about">About Us</a></li>
+                                <li><a href="#contact">Contact Us</a></li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

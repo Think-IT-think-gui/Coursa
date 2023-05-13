@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Simple Tables</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% get_static_prefix %}Temp9/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% get_static_prefix %}Temp9/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+   
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrappe">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        
+        
+      </div><!-- /.container-fluid -->
+    </section>
+ <!-- Main content -->
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">DataTable For Manager Accounts</h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <table id="example22" class="table table-bordered table-striped">
+          <thead>
+          <tr>
+            <th>TeacherID</th>
+            <th>Profile</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Location</th>
+            <th>School Name</th>
+            <th>Currency</th>
+            <th>Subscribtion</th>
+            <th>Date Added</th>
+            <th><i class="fa fa-edit"></i></th>
+            
+          </tr>
+          </thead>
+          <tbody>
+          
+          {% for i in Teacher %}
+            <tr>
+            <td>{{i.id}}</td>
+           <td> <img src="{% get_media_prefix %}Teachers/{{i.id}}.jpg?{{Rand}}" alt="Product Image" style="border-radius: 100px;width: 40px;height: 40px;" class="img-size-50"></td>
+            <td>{{i.Full_Name}}</td>
+            <td>{{i.Email}}</td>
+            <td>{{i.Location}}</td>
+            <td>{{i.School_Name}}</td>
+
+           
+            <td><span class="badge bg-success">{{i.Currency}}</span></td>
+            <td><span class="badge bg-warning">{{i.Plans}}</span></td>
+            <td><span class="badge bg-primary">{{i.date}}</span></td>
+            <td><a href="../../../view_user/{{i.id}}"><i class="fa fa-pencil-alt"></i><button class="badge bg-primary" ></button></a></td>
+
+
+            
+         {% endfor %}
+
+          
+          </tbody>
+          <tfoot>
+          <tr>
+            <th>Teacher ID</th>
+            <th>Profile</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Location</th>
+            <th>School Name</th>
+            <th>Currency</th>
+            <th>Subscribtion</th>
+            <th>Date Added</th>
+            <th><i class="fa fa-edit"></i></th>
+
+          </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">DataTable For Student</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <table id="example33" class="table table-bordered table-striped">
+        <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Profile</th>
+          <th>Name</th>
+          <th>Email</th>
+
+          <th>Location</th>
+          
+    
+          <th>Date Added</th>
+          <th><i class="fa fa-edit"></i></th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        
+        {% for i in Student %}
+          <tr>
+          <td>{{i.id}}</td>
+         <td> <img src="{% get_media_prefix %}Students/{{i.id}}.jpg?{{Rand}}" alt="Product Image" style="border-radius: 2px;" width="30" height="30" class="img-size-50"></td>
+          <td>{{i.Full_Name}}</td>
+          <td>{{i.Email}}</td>
+
+          <td>{{i.Location}}</td>
+          
+            
+          <td><span class="badge bg-primary">{{i.date}}</span></td>
+          <td><a href="../../../view_student/{{i.id}}"><i class="fa fa-pencil-alt"></i><button class="badge bg-primary" ></button></a></td>
+
+        </tr>
+       {% endfor %}
+
+        
+        </tbody>
+        <tfoot>
+        <tr>
+          <th>Student ID</th>
+          <th>Profile</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Location</th>
+          <th>Date Added</th>
+          <th><i class="fa fa-edit"></i></th>
+            
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">DataTable For Courses</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <table id="example44" class="table table-bordered table-striped">
+        <thead>
+        <tr>
+          <th>Course ID</th>
+          <th>Profile</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Level</th>
+          <th>Amount</th>
+          <th>Date Added</th>
+          <th><i class="fa fa-edit"></i></th>
+          <th><i class="fa fa-trash"></i></th>
+
+        </tr>
+        </thead>
+        <tbody>
+        
+        {% for i in Course %}
+          <tr id="{{i.id}}c">
+          <td>{{i.id}}</td>
+         <td> <img src="{% get_media_prefix %}Courses/{{i.id}}.jpg?{{Rand}}" alt="Product Image" style="border-radius: 130px;width: 40px;height: 40px;" width="30" height="30" class="img-size-50"></td>
+          <td>{{i.Name}}</td>
+          <td>{{i.Type}}</td>
+          <td>{{i.Level}}</td>
+          <td>$ {{i.Amount}}</td>
+          
+          <td><span class="badge bg-primary">{{i.date}}</span></td>
+          <td><a style="cursor: pointer;" href="../../../view_courses/{{i.id}}"><i class="fa fa-pencil-alt"></i><button class="badge bg-primary" ></button></a></td>
+          <td><a style="cursor: pointer;" onclick="on('{{i.id}}')"><i class="fa fa-trash-alt"></i><button class="badge bg-danger" ></button></a></td>
+
+
+        </tr>
+       {% endfor %}
+
+        
+        </tbody>
+        <tfoot>
+        <tr>
+          <th>Course ID</th>
+          <th>Profile</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Level</th>
+          <th>Amount</th>
+          <th>Date Added</th>
+          <th><i class="fa fa-edit"></i></th>
+          <th><i class="fa fa-trash"></i></th>
+
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  
+    
+    <!-- /.card -->
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">DataTable For Orders Requested</h3>
+      </div>
+      
+      <!-- /.card-header -->
+      <div class="card-body">
+        <table id="example21" class="table table-bordered table-striped">
+          <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Course</th>
+            <th>Course Name</th>
+            <th>Student</th>
+            <th>Student Name</th>
+            <th>Amount</th>
+            <th>Level</th>
+
+            <th>Status</th>
+            <th>Date Added</th>
+            <th><i class="fa fa-edit"></i></th>
+            <th><i class="fa fa-trash"></i></th>
+
+
+          </tr>
+          </thead>
+          <tbody>
+          
+          {% for i in Listed %}
+            <tr id="{{i.id}}a">
+            <td>{{i.id}}</td>
+            <td> <img src="{% get_media_prefix %}Courses/{{i.Course_Img}}.jpg?{{Rand}}" alt="Product Image" style="border-radius: 130px;width: 40px;height: 40px;" width="30" height="30" class="img-size-50"></td>
+
+            <td>{{i.Course_Name}}</td>
+            <td> <img src="{% get_media_prefix %}Students/{{i.Student_Img}}.jpg?{{Rand}}" alt="Product Image" style="border-radius: 130px;width: 40px;height: 40px;" width="30" height="30" class="img-size-50"></td>
+
+            <td>{{i.Student_Name}}</td>
+    
+            <td><span class="badge bg-danger">$ {{i.Amount}}</span></td>
+  
+            <td><span class="badge bg-success">{{i.Course_Level}}</span></td>
+            <td>{{i.Type}}</td>
+            
+            <td><span class="badge bg-primary">{{i.date}}</span></td>
+            <td><a style="cursor: pointer;" onclick="Accept('{{i.id}}')"><i class="fa fa-edit"></i><button class="badge bg-primary" ></button></a></td>
+            <td><a style="cursor: pointer;" onclick="on2('{{i.id}}')"><i class="fa fa-trash"></i><button class="badge bg-primary" ></button></a></td>
+
+          </tr>
+         {% endfor %}
+  
+          
+          </tbody>
+          <tfoot>
+          <tr>
+            <th>Order ID</th>
+            <th>Course</th>
+            <th>Course Name</th>
+            <th>Student</th>
+            <th>Student Name</th>
+            <th>Amount</th>
+            <th>Level</th>
+
+            <th>Status</th>
+            <th>Date Added</th>
+            <th><i class="fa fa-edit"></i></th>
+            <th><i class="fa fa-trash"></i></th>
+
+          </tr>
+          </tfoot>
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+
+  <!-- /.card -->
+</div>
+  <!-- /.col -->
+</div>
+<!-- /.row -->
+
+  <!-- /.content-wrapper -->
+   
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+
+<!-- ./wrapper -->
+<div id="back">
+  <div id="note" class="card" style="z-index: -333;">
+  <h1 style="padding-top: 20px;">Do you want to continue!</h1>
+  <br>
+  <p>Clicking Yes means you will delete this from your system permanently.</p>
+ <div style="padding-top: 20px;">
+  <button class="btn bg-success" id="yes">Yes</button>
+  <button class="btn bg-danger" onclick="off()">No</button>
+</div>
+  </div>
+</div>
+
+<script>
+  function on(id){
+    document.getElementById("back").setAttribute("style","position: fixed;top: 0px;width: 100%;text-align: center;height: 100%;background-color: rgba(0, 0, 0, 0.425);z-index:300")
+    document.getElementById("note").setAttribute("style","background-color: rgb(255, 255, 255);border-radius: 20px;text-align: center;width: 30%;height: 30%;position: fixed;left: 30%;top: 20%;z-index: 4000")
+    document.getElementById("yes").addEventListener('click',function(){yes(id)})
+  }
+  function on2(id){
+    document.getElementById("back").setAttribute("style","position: fixed;top: 0px;width: 100%;text-align: center;height: 100%;background-color: rgba(0, 0, 0, 0.425);z-index:300")
+    document.getElementById("note").setAttribute("style","background-color: rgb(255, 255, 255);border-radius: 20px;text-align: center;width: 30%;height: 30%;position: fixed;left: 30%;top: 20%;z-index: 4000")
+    document.getElementById("yes").addEventListener('click',function(){yes2(id)})
+  }
+  function yes(id){
+    Delete2(id)
+  }
+  function yes2(id){
+    Delete(id)
+  }
+  function off(){
+    document.getElementById("back").setAttribute("style","z-index:-300")
+    document.getElementById("note").setAttribute("style","z-index: -4000")
+  }
+</script>
+<!-- jQuery -->
+<script src="{% get_static_prefix %}Temp9/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="{% get_static_prefix %}Temp9/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="{% get_static_prefix %}Temp9/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{% get_static_prefix %}Temp9/dist/js/demo.js"></script>
+
+
+<script src="{% get_static_prefix %}Temp9/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="{% get_static_prefix %}Temp9/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="{% get_static_prefix %}Temp9/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="{% get_static_prefix %}Temp9/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="{% get_static_prefix %}Temp9/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="{% get_static_prefix %}Temp9/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="{% get_static_prefix %}Temp9/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="{% get_static_prefix %}Temp9/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="{% get_static_prefix %}Temp9/plugins/jszip/jszip.min.js"></script>
+<script src="{% get_static_prefix %}Temp9/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="{% get_static_prefix %}Temp9/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="{% get_static_prefix %}Temp9/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="{% get_static_prefix %}Temp9/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="{% get_static_prefix %}Temp9/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- AdminLTE App -->
+<script src="{% get_static_prefix %}Temp9/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{% get_static_prefix %}Temp9/dist/js/demo.js"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+    $("#example22").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example22_wrapper .col-md-6:eq(0)');
+    $('#example').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+    $("#example33").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example33_wrapper .col-md-6:eq(0)');
+    $('#example').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+    $("#example44").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example44_wrapper .col-md-6:eq(0)');
+    $('#example').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+    $("#example21").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example21_wrapper .col-md-6:eq(0)');
+    $('#example').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+</body>
+</html>
+
+
+<script>
+  function selected(value){
+  document.getElementById("answer").value=value
+}
+
+  function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          // Does this cookie string begin with the name we want?
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+          }
+      }
+  }
+  return cookieValue;
+  }
+
+  const csrftoken = getCookie('csrftoken');
+  console.log(csrftoken)
+
+
+
+function Delete(id){
+data = JSON.stringify({
+id: id,
+})
+fetch("{% url 'delete_admin' %}", {
+method: 'POST',
+body: data,
+headers: { 'X-CSRFToken': csrftoken,'Accept': 'application/json, text/plain, */*',
+  'Content-Type': 'application/json',
+  },
+})
+.then(response => response.json())
+.then(data => {
+console.log(data);
+if (data === "Success"){
+    document.getElementById(id+"a").remove()
+  alert("Opperation Successfull!")
+  off()
+}else{
+alert("An error occured!")
+}
+ 
+});}
+
+function Delete2(id){
+data = JSON.stringify({
+id: id,
+})
+fetch("{% url 'delete_course' %}", {
+method: 'POST',
+body: data,
+headers: { 'X-CSRFToken': csrftoken,'Accept': 'application/json, text/plain, */*',
+  'Content-Type': 'application/json',
+  },
+})
+.then(response => response.json())
+.then(data => {
+console.log(data);
+if (data === "Success"){
+    document.getElementById(id+"c").remove()
+  alert("Opperation Successfull!")
+  off()
+}else{
+alert("An error occured!")
+}
+ 
+});}
+
+
+function Accept(id){
+data = JSON.stringify({
+id: id,
+})
+fetch("{% url 'accept_admin' %}", {
+method: 'POST',
+body: data,
+headers: { 'X-CSRFToken': csrftoken,'Accept': 'application/json, text/plain, */*',
+  'Content-Type': 'application/json',
+  },
+})
+.then(response => response.json())
+.then(data => {
+console.log(data);
+if (data === "Success"){
+ 
+  alert("Opperation Successfull!")
+}else{
+alert("An error occured!")
+}
+ 
+});}
+ </script>

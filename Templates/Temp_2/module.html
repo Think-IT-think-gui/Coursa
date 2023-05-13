@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="yHA5u8WtpQpSiX7tNQAHKD98wQ0u3WkBqzm0FUnX">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Some description for the page">
+    <title>Owlio | Dashboard</title>
+    <meta property="og:title" content="Owlio - School Admission Admin Laravel Dashboard">
+    <meta property="og:description" content="Owlio | Dashboard">
+    <meta property="og:image" content="https://owlio.dexignzone.com/laravel/social-image.png">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% get_static_prefix %}Temp_2/public/images/favicon.png">
+
+
+         
+                    <link href="{% get_static_prefix %}Temp_2/public/vendor/chartist/css/chartist.min.css" rel="stylesheet" type="text/css">
+                    <link href="{% get_static_prefix %}Temp_2/public/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+              
+
+    
+     
+                    <link href="{% get_static_prefix %}Temp_2/public/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" type="text/css">
+                    <link href="{% get_static_prefix %}Temp_2/public/css/style.css" rel="stylesheet" type="text/css">
+              
+</head>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+
+		{% include 'Extra\header_2.html' %}
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+      
+        <!--**********************************
+            Sidebar end
+        ***********************************-->        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+		
+		
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <!-- row -->
+            	<div class="container-fluid">
+		<div class="form-head d-flex flex-wrap mb-sm-4 mb-3 align-items-center">
+			<div class="mr-auto  d-lg-block mb-3">
+				
+			</div>
+			<form method="post" action="{% url 'create_module' %}">
+				{% csrf_token %}
+				<input type="hidden" name="id"  value="{{Course}}">
+			
+			<button href="javascript:void(0);"  class="btn btn-primary btn-rounded mb-3"><i class="fa fa-plus mr-3"></i>Add Module</button>
+		    </form>
+			<!-- Add Order -->
+			
+		</div>
+
+
+		
+		<div class="row">
+			
+				
+			
+			
+			<div class="col-xl-12">
+				
+				<div class="card">
+					<div class="card-header border-0 pb-2 d-flex flex-wrap">
+						<div class="mb-3">
+							<h4 class="fs-24 font-w700 mb-2">Module Overview</h4>
+							<p class="fs-14 mb-0">The progress of your topics with students reaction to them.</p>
+						</div>
+						
+					</div>
+				
+								
+							
+							{% for i in Topic %}
+							<div class="food-list-row">
+								<div class="media-bx">
+									<div class="media align-items-center">
+										
+										<i  style="font-size: 50px;" class="flaticon-025-dashboard"></i>
+										<div class="media-body">
+											<h5 class="mb-2" style="padding-left: 20px;"><a >Module {{i.count}}</a></h5>
+										</div>
+									</div>
+								</div>
+								<div class="text-center food-review">
+									<span class="text-black fs-18 font-w700  mr-2 mr-sm-0"></span>
+									
+								</div>
+								<div class="food-list-footer">
+									
+									
+									<div class="" style="opacity: 0;">
+										<div class="d-sm-inline-block d-none relative donut-chart-sale">
+											<span class="donut" data-peity='{ "fill": ["rgb(30, 51, 242)", "rgba(235, 235, 235, 1)"],   "innerRadius": 30, "radius": 10}'></span>
+											<small class="fs-16 text-black"></small>
+										</div>
+									</div>
+									
+									
+										
+									<a href="../../../course_update/{{i.id}}"><div class="">
+										
+										
+										<button type="submit" class="btn btn-rounded btn-primary"><span class="btn-icon-left text-primary"><i class="fa fa-unlock"></i>
+										</span>Access</button>
+									</div></a>
+								
+								</div>
+							</div>
+								
+								{% endfor %}
+
+
+
+							</div>	
+			</div>
+		</div>
+	</div>
+        </div>
+
+
+		<script src="{% get_static_prefix %}Temp_2/public/vendor/global/global.min.js" type="text/javascript"></script>
+		<script src="{% get_static_prefix %}Temp_2/public/vendor/bootstrap-select/dist/js/bootstrap-select.min.js" type="text/javascript"></script>
+						<script src="{% get_static_prefix %}Temp_2/public/vendor/bootstrap-datetimepicker/js/moment.js" type="text/javascript"></script>
+		<script src="{% get_static_prefix %}Temp_2/public/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+		<script src="{% get_static_prefix %}Temp_2/public/vendor/peity/jquery.peity.min.js" type="text/javascript"></script>
+		<script src="{% get_static_prefix %}Temp_2/public/vendor/apexchart/apexchart.js" type="text/javascript"></script>
+		<script src="{% get_static_prefix %}Temp_2/public/js/dashboard/dashboard-1.js" type="text/javascript"></script>
+						<script src="{% get_static_prefix %}Temp_2/public/js/custom.min.js" type="text/javascript"></script>
+		<script src="{% get_static_prefix %}Temp_2/public/js/deznav-init.js" type="text/javascript"></script>
+		<script src="{% get_static_prefix %}Temp_2/public/js/dashboard/food.js" type="text/javascript"></script>
+            
+       
+</body>
+</html>
